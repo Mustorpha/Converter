@@ -2,6 +2,8 @@
 The Engine class for the converter
 it holds contains all the methods necessary
 for the machine to successfully convert dynamically
+The design is such that an instance of the engine
+class can be created explicitly for any purpose
 '''
 
 from Bank import Bank
@@ -68,8 +70,7 @@ class Engine (Bank):
             if items in Engine.bank.values():
                 for key in Engine.bank.keys():
                     if Engine.bank[key] == items:
-                        result = key
-                        yield result
+                        yield key
             else:
                 yield None
     def join (self, iterates):
